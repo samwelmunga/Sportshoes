@@ -1,0 +1,382 @@
+
+* {
+    font-family: 'Oswald', sans-serif;
+    color: rgb(238, 238, 238);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#page-top {
+    border: 1px solid;
+}
+
+.page-top-header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    margin-top: -45px;
+    background-color: black;
+    z-index: 4;
+}
+
+.page-top-header img {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.page-top-header ul {
+    list-style: none;
+    float: right;
+    margin-right: 5px;
+}
+
+.page-top-header li {
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+}
+
+.page-top-slideshow {
+    width: 100vw;
+    height: 200px;
+    margin-top: 45px;
+    overflow: hidden;
+}
+
+.page-top-slideshow-img {
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    opacity: 0;
+    transition: 1s;
+}
+
+.slideshow-img {
+    position: relative; /* absolute */
+    height: inherit;
+    background-size: cover;
+    z-index: 1;
+}
+
+.active-slide {
+    opacity: 1;
+    z-index: 2;
+}
+
+.page-top-slideshow-img button {
+    position: relative;
+    font-weight: bold;
+    top: -50px;
+    left: 13%;
+    margin-left: 20px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 2px solid #eee;
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+    z-index: 3;
+}
+
+.page-top-slideshow-img button:nth-child(2) {
+    color: #50297E;
+    background-color: #eee;
+}
+
+.page-top-slideshow-paginations {
+    z-index: 3;
+    position: absolute;
+    margin-top: 180px;
+    display: inline-flex;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.page-top-slideshow-page {
+    width: 7px;
+    height: 7px;
+    margin: 5px;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.active-slide-page {
+    background-color: rgba(238, 238, 238, 1);
+}
+
+.searchbar-fixed {
+    position: fixed;
+    width: 100%;
+    height: 85px;
+    top: 5px;
+    border-bottom: 3px solid rgb(238, 238, 238);
+    z-index: 3;
+    background-color: rgb(238, 238, 238);
+}
+
+.page-main-search-icon {
+    background: url(../images/icons/search-icon.png) center no-repeat;
+    background-size: 13px;
+    position: relative;
+    top: -38px;
+    right: -88%;
+    height: 15px;
+    width: 15px;
+    padding: 10px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.page-main-searchbar {
+    border: none;
+    box-shadow: 0 0 1px 1px #eee;
+    border-radius: 4px;
+    width: calc(100% - 16px);
+    height: 35px;
+    margin-top: 45px;
+    margin-left: 7px;
+    font-family: Lato;
+    font-size: 15pt;
+    text-indent: 10px;
+    color: #000;
+}
+
+.page-main-content-wrapper {
+    margin-top: -20px;
+}
+
+.page-main-content {
+    margin: 5px;
+    margin-bottom: 25px;
+    padding-left: 10px; 
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.page-main-content img {
+    width: 200px;
+    margin-top: 5px;
+}
+
+
+.page-main-content h1 {
+    color: #000;
+    font-size: 15pt;
+}
+
+/* 
+.page-bottom-banners-wrapper {
+    width: 100vw;
+} 
+*/
+
+.page-bottom-banner img {
+    position: relative;
+    width: 100%;
+}
+
+.page-bottom-banner-caption {
+    position: absolute;
+    margin-top: -160px;
+    padding: 25px;
+    line-height: 1.5;
+}
+
+.page-bottom-banner-caption h1 {
+    font-size: 14pt;
+}
+
+.page-bottom-banner-caption p {
+    font-family: 'Lato', sans-serif;
+    color: gray;
+    font-size: 9pt;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+.page-bottom-banner-caption a {
+    color: inherit;
+    font-size: 9pt;
+}
+
+
+@media (min-width: 450px) {
+
+    .page-top-slideshow {
+        height: 250px;
+    }
+
+    .page-top-slideshow-paginations {
+        margin-top: 220px;
+    }
+
+    /* .page-main-content img {
+        margin-left: 0;
+    } */
+
+}
+
+@media (min-width: 550px) {
+
+    .page-top-slideshow {
+        height: 300px;
+    }
+
+    .page-top-slideshow-paginations {
+        margin-top: 270px;
+    }
+
+}
+
+@media (min-width: 650px) {
+
+    .page-top-header {
+        position: absolute;
+        background-color: rgba(0,0,0,0);
+        margin-top: 0;
+        width: calc(100% - 100px);
+        padding: 50px;
+    }
+
+    .page-top-header ul {
+        display: inline-flex;
+    }
+
+    .page-top-header li {
+        margin-left: 10px;
+    }
+
+    .page-top-slideshow {
+        height: 450px;
+        margin-top: 0;
+    }
+
+    .page-top-slideshow-img button {
+        top: -20vh;
+        left: 17vw;
+    }
+
+    .page-top-slideshow-paginations {
+        margin-top: 420px;
+    }
+
+    .page-main-searchbar {
+        font-size: 9pt;
+    }
+
+    .page-main-search-icon {
+        right: -93%;
+    }
+
+    .page-main-content {
+        width: 45%;
+        height: 275px;
+        float: left;
+        margin-left: 2vw;
+    }
+    
+    .page-main-content img {
+        width: auto;
+        height: 160px;
+    }
+    
+    .page-main-content h1 {
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    .page-bottom-banners-wrapper {
+        margin-left: 5px;
+        margin-bottom: 100px;
+        float: left;
+    }
+
+    .page-bottom-banner {
+        position: relative;
+        width: 49.5%;
+        float: left;
+    }
+
+    .page-bottom-banner:nth-child(2) {
+        width: 49.65%;
+    }
+
+}
+
+@media (min-width: 950px) {
+    
+    .page-top-header img {
+        margin-top: 0; 
+        width: 150px;
+    }
+
+    .page-top-header li {
+        margin-left: 25px;
+        font-size: 9pt;
+    }
+
+    .page-top-slideshow {
+        height: 575px;
+    }
+
+    .page-top-slideshow-img button {
+        top: -27vh;
+    }
+
+    .page-top-slideshow-paginations {
+        margin-top: 545px;
+    }
+
+    .page-main-wrapper {
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    .page-main-content {
+        width: 28%;
+        margin-left: 1vw;
+        height: 200px;
+    }
+
+    .page-main-content img {
+        height: 110px;
+        margin-top: 30px;
+    }
+
+    .page-main-content h1 {
+        margin-left: 0;
+        font-size: 9pt;
+    }
+
+    .page-bottom-banner-caption {
+        width: 55%;
+    }
+
+}
+
+@media (min-width: 1250px) {
+
+    .page-top-slideshow {
+        height: 675px;
+    }
+
+    .page-top-slideshow-img button {
+        top: -30vh;
+    }
+
+    .page-top-slideshow-paginations {
+        margin-top: 645px;
+    }
+
+    .page-main-content {
+        margin-left: 1.5vw;
+    }
+
+}
