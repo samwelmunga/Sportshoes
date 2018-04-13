@@ -215,6 +215,7 @@ var article = document.createElement('div'),
     article.classList.add('page-main-content');
     title.innerHTML = json['name'];
     image.src = getContentImage(json['media_file']);
+    image.alt = json['name'];
 
     article.appendChild(image);
     article.appendChild(title);
@@ -293,6 +294,10 @@ function onKeyPress( e ) {
     }
 
 }
+
+/**
+ * Searchbar helper functions
+ */
 
 function checkSearchbarPosition() {
 
