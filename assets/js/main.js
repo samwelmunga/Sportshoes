@@ -107,12 +107,16 @@ var article = document.createElement('div'),
 
 function showPreview() {
 
-var ix   = Elements.toArray(Elements.content_wrapper.children).indexOf(this),
-    data = Products.current[ix],
-    prev = Elements.preview_wrapper;  
-    
-    prev.getElementsByTagName('img')[0].src      = getContentImage(data['media_file']);;
-    prev.getElementsByTagName('h1')[0].innerHTML = data['name'];
+var ix    = Elements.toArray(Elements.content_wrapper.children).indexOf(this),
+    data  = Products.current[ix],
+    prev  = Elements.preview_wrapper,
+    price = Elements.pricetag;
+
+    console.log(data);
+    prev.getElementsByTagName('img')[0].src       = getContentImage(data['media_file']);;
+    prev.getElementsByTagName('h1')[0].innerHTML  = data['name'];
+    price.getElementsByTagName('h3')[0].innerHTML = Math.round(data['master']['current_price']['after_tax_amount']) + ':-';
+    price.getElementsByTagName('b')[0].innerHTML  = Math.round(data['master']['current_price']['pre_tax_amount']) + ':- exkl. moms';
 
     prev.classList.remove('hide');
     
@@ -132,7 +136,7 @@ var request,
     search  = Elements.searchbar.value,
     params  = search ? '&q=' + search : '',
     snippet = params ? '/search' : '',
-    url     = 'https://webshop.wm3.se/api/v1/shop/products' + snippet + '.json?media_file=true' + params + '&limit=' + Products.limit;
+    url     = 'https://webshop.wm3.se/api/v1/shop/products' + snippet + '.json?media_file=true&price=true' + params + '&limit=' + Products.limit;
 
     if(XMLHttpRequest){
         request = new XMLHttpRequest();

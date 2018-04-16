@@ -44,6 +44,10 @@ Elements = {
         return document.getElementById('page-main-preview-wrapper');
     },
 
+    get pricetag() {
+        return document.getElementsByClassName('page-preview-pricetag')[0];
+    },
+
     toArray: function( htmlList ) {
         for(var i = 0, list = []; i < htmlList.length; list.push(htmlList[i++]));
         return list;

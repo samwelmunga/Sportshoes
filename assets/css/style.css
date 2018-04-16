@@ -172,7 +172,6 @@ a {
     margin-top: 5px;
 }
 
-
 .page-main-content h1 {
     color: #000;
     font-size: 15pt;
@@ -190,7 +189,7 @@ a {
     background-color: white;
 }
 
-#page-main-preview-wrapper span {
+.preview-close-btn {
     position: absolute;
     right: 20px;
     top: -25px;
@@ -211,6 +210,22 @@ a {
     color: black;
     text-align: center;
     position: relative;
+}
+
+.page-preview-pricetag {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    color: black;
+}
+
+.page-preview-pricetag h3 {
+    color: inherit;
+}
+
+.page-preview-pricetag b {
+    color: inherit;
+    font-size: 9pt;
 }
 
 .page-bottom-banner img {
